@@ -24,11 +24,15 @@ Set up the API key by creating a `.env` file in your cloned directory. Alternati
 GOOGLE_API_KEY='<your-api-key>'
 ```
 
-Start the server by running the app.
+Open up a terminal and start the server by running the app.
 
 ```bash
 uvicorn app:app --reload
 ```
+
+Open the `index.html` file in your browser of choice and play the game.
+
+### Testing FastAPI Endpoint
 
 Test the API by make a POST request on the `/ask` endpoint.
 
