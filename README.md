@@ -24,7 +24,21 @@ Set up the API key by creating a `.env` file in your cloned directory. Alternati
 GOOGLE_API_KEY='<your-api-key>'
 ```
 
-Play by running `main.py`.
+Start the server by running the app.
+
+```bash
+uvicorn app:app --reload
+```
+
+Test the API by make a POST request on the `/ask` endpoint.
+
+```bash
+curl -X POST "http://host:port/ask" -H "Content-Type: application/json" -d "{\"question\":\"Will I succeed?\"}"
+```
+
+### Running in CLI
+
+You can also play the game in command line by running `main.py` in any terminal.
 
 ```bash
 python main.py
@@ -33,4 +47,3 @@ python main.py
 ## Contribution
 
 Feel free to open up a pull request to point out a bug or an improvement.
- 
