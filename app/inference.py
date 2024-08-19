@@ -1,7 +1,5 @@
+import os
 import google.generativeai as genai
-import dotenv
-
-dotenv.load_dotenv()
 
 
 def load_instructions(file):
@@ -12,7 +10,7 @@ def load_instructions(file):
     return '\n'.join(instructions)
 
 def generate_response(question, instructions):
-    genai.configure()
+    genai.configure(api_key=os.environ.get('GOOGLE_API_KEY'))
     model = genai.GenerativeModel(
         model_name='gemini-1.5-pro',
         system_instruction=instructions
