@@ -1,5 +1,6 @@
 from inference import *
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
+from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -13,12 +14,18 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
+class Question(BaseModel):
+    question: str
+
+
+@app.get('/')
+async def read_root():
+    return {'message': 'Welcome to Magic 8 Ball 🎱!'}
+
 @app.post('/ask')
-async def ask_question(request: Request):
+async def ask_question(question: Question):
     try:
-        data = await request.json()
-        question = data.get('question', '')
-        response = generate_response(question, instructions=load_instructions('../instructions.txt'))
+        response = generate_response(question.question, instructions=load_instructions('../instructions.txt'))
         return {'response': response.strip()}
     except Exception as e:
         return {'error': str(e)}
