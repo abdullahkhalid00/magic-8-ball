@@ -18,16 +18,18 @@ Navigate to the cloned repo directory.
 cd 8_ball
 ```
 
-Set up the API key by creating a `.env` file in your cloned directory. Alternatively, you can rename the `.env-sample` file and paste your API key in it.
+Set up your Google API key as an environment variable.
+
+Alternatively, you can create a `.env` file in your directory and use the `python-dotenv` library to read environment variables.
 
 ```python
 GOOGLE_API_KEY='<your-api-key>'
 ```
 
-Open up a terminal and start the server by running the app.
+Open up a terminal and navigate to the `app` directory. Start the server by running `main.py`.
 
 ```bash
-uvicorn app:app --reload
+uvicorn main:app --reload
 ```
 
 Open the `index.html` file in your browser of choice and play the game.
@@ -37,7 +39,7 @@ Open the `index.html` file in your browser of choice and play the game.
 Test the API by make a POST request on the `/ask` endpoint.
 
 ```bash
-curl -X POST "http://host:port/ask" -H "Content-Type: application/json" -d "{\"question\":\"Will I succeed?\"}"
+curl -X POST "http://localhost:8000/ask" -H "Content-Type: application/json" -d "{\"question\":\"Will I succeed?\"}"
 ```
 
 ### Running in CLI
