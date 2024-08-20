@@ -2,9 +2,12 @@ document.getElementById('questionForm').addEventListener('submit', async functio
     e.preventDefault();
     
     const question = document.getElementById('question').value;
-    
+
     try {
-        const response = await fetch('http://localhost:8000/ask', {
+        const configResponse = await fetch('config.json');
+        const config = await configResponse.json();
+
+        const response = await fetch(`${config.vercelURL}/ask`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,7 +25,7 @@ document.getElementById('questionForm').addEventListener('submit', async functio
         } else if (data.error) {
             document.getElementById('response').textContent = `Error: ${data.error}`;
         }
-        
+
     } catch (error) {
         console.error('Fetch error:', error);
         document.getElementById('response').textContent = 'An error occurred. Please try again.';
