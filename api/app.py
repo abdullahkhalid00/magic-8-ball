@@ -25,7 +25,7 @@ async def read_root():
 @app.post('/ask')
 async def ask_question(question: Question):
     try:
-        response = generate_response(question.question, instructions=load_instructions('../instructions.txt'))
+        response = generate_response(question.question)
         return {'response': response.strip()}
     except Exception as e:
         return {'error': str(e)}

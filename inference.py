@@ -9,7 +9,7 @@ def load_instructions(file):
             instructions.append(line.decode().strip())
     return '\n'.join(instructions)
 
-def generate_response(question, instructions):
+def generate_response(question, instructions=load_instructions('./instructions.txt')):
     genai.configure(api_key=os.environ.get('GOOGLE_API_KEY'))
     model = genai.GenerativeModel(
         model_name='gemini-1.5-pro',
