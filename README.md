@@ -63,9 +63,9 @@ You can also play the game in command line by running `cli.py` in any terminal.
 python cli.py --question "<your-question>"
 ```
 
-## Deployment on Hugging Face 🤗
+## Deployment on Leapcell
 
-Despite much effort, I could not find my way around Vercel for deploying the frontend, instead I created another frontend on Gradio and deployed it as a Hugging Face Space.
+The FastAPI endpoint is deployed on Leapcell and the frontend is deployed on GitHub pages as a static webpage.
 
 ## Contribution
 
