@@ -4,7 +4,7 @@ document.getElementById('questionForm').addEventListener('submit', async functio
     const question = document.getElementById('question').value;
     
     try {
-        const response = await fetch('http://localhost:8000/ask', {
+        const response = await fetch('https://magic-8-ball-iabdulahk7217-w4idun4v.leapcell.dev/ask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
