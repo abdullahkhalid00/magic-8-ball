@@ -15,7 +15,7 @@ git clone <repo-link>
 Navigate to the cloned repo directory.
 
 ```bash
-cd 8_ball
+cd magic_8_ball
 ```
 
 Set up your Google API key as an environment variable.
@@ -24,6 +24,19 @@ Alternatively, you can create a `.env` file in your directory and use the `pytho
 
 ```python
 GOOGLE_API_KEY='<your-api-key>'
+```
+
+Create a Python virtual environment and activate it.
+
+```bash
+python -m venv env
+env\Scripts\activate
+```
+
+Install the necessary dependencies in `requirements.txt` file.
+
+```bash
+pip install -r requirements.txt
 ```
 
 Open up a terminal and navigate to the `app` directory. Start the server by running `main.py`.
@@ -44,11 +57,15 @@ curl -X POST "http://localhost:8000/ask" -H "Content-Type: application/json" -d 
 
 ### Running in CLI
 
-You can also play the game in command line by running `main.py` in any terminal.
+You can also play the game in command line by running `cli.py` in any terminal.
 
 ```bash
-python main.py
+python cli.py --question "<your-question>"
 ```
+
+## Deployment on HuggingFaceHub
+
+Despite much effort, I could not find my way around Vercel for deploying the frontend, instead I created another frontend on Gradio and deployed it on [HuggingFaceHub](!https://sample-link).
 
 ## Contribution
 
