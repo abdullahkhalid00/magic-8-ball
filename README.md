@@ -1,6 +1,6 @@
 # Magic 8 Ball in Python 🎱
 
-[![pages-build-deployment](https://github.com/abdullahkhalid00/magic-8-ball/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/abdullahkhalid00/magic-8-ball/actions/workflows/pages/pages-build-deployment) [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/release/python-360/)
+[![pages-build-deployment](https://github.com/abdullahkhalid00/magic-8-ball/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/abdullahkhalid00/magic-8-ball/actions/workflows/pages/pages-build-deployment) [![Python 3.10+](https://img.shields.io/badge/python-3.11-blue.svg)](https://tracker.debian.org/pkg/python3.11)
 
 A very basic implementation of the magic 8 ball game that simply asks the user for a question and uses a Gemini Pro model to generate an answer. The model simulates a magic 8 ball in real life.
 
