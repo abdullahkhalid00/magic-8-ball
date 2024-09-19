@@ -41,10 +41,10 @@ Install the necessary dependencies in `requirements.txt` file.
 pip install -r requirements.txt
 ```
 
-Open up a terminal and navigate to the `app` directory. Start the server by running `main.py`.
+Open up a terminal and run the `app.py` file.
 
 ```bash
-uvicorn main:app --reload
+uvicorn app:app --reload
 ```
 
 Open the `index.html` file in your browser of choice and play the game.
